@@ -16,13 +16,13 @@ A TypeScript client for the WhatsApp Cloud API — a faithful port of
 ## Install
 
 ```bash
-npm install jswa
+npm install @tobibamidele/jswa
 ```
 
 ## Quick start — sending only (no webhook)
 
 ```ts
-import { WhatsApp } from 'jswa'
+import { WhatsApp } from '@tobibamidele/jswa'
 
 const wa = new WhatsApp({ token: 'YOUR_TOKEN', phoneId: 'YOUR_PHONE_ID' })
 
@@ -34,8 +34,8 @@ console.log(msg.id)
 
 ```ts
 import express from 'express'
-import { WhatsApp, filterText } from 'jswa'
-import { expressWebhook } from 'jswa/adapters/express'
+import { WhatsApp, filterText } from '@tobibamidele/jswa'
+import { expressWebhook } from '@tobibamidele/jswa/adapters/express'
 
 const wa = new WhatsApp({
   token: process.env.WA_TOKEN!,
@@ -55,15 +55,16 @@ app.use(wa.webhookEndpoint, express.raw({ type: '*/*' }), expressWebhook(wa))
 app.listen(8080)
 ```
 
-Other frameworks: `jswa/adapters/fastify`, `jswa/adapters/hono`,
-`jswa/adapters/nextjs`, `jswa/adapters/tanstack`, or `jswa/adapters/node` for
-a plain `http.createServer`. See `examples/` for complete, runnable versions
-of each.
+Other frameworks: `@tobibamidele/jswa/adapters/fastify`,
+`@tobibamidele/jswa/adapters/hono`, `@tobibamidele/jswa/adapters/nextjs`,
+`@tobibamidele/jswa/adapters/tanstack`, or `@tobibamidele/jswa/adapters/node`
+for a plain `http.createServer`. See `examples/` for complete, runnable
+versions of each.
 
 ## Filters & handlers
 
 ```ts
-import { filterText, filterImage, filterTextPrefix, and, or, not } from 'jswa'
+import { filterText, filterImage, filterTextPrefix, and, or, not } from '@tobibamidele/jswa'
 
 wa.onMessage(async (_wa, msg) => { await msg.react('👍') }, filterImage)
 
@@ -128,7 +129,7 @@ Every failed API call throws a `WhatsAppError` with the Graph API's error
 code, message, and (when present) subcode/trace ID:
 
 ```ts
-import { WhatsAppError, getErrorKind } from 'jswa'
+import { WhatsAppError, getErrorKind } from '@tobibamidele/jswa'
 
 try {
   await wa.sendMessage(to, 'hi')

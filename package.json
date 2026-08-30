@@ -1,5 +1,5 @@
 {
-  "name": "jswa",
+  "name": "@tobibamidele/jswa",
   "version": "1.0.0",
   "description": "TypeScript client for the WhatsApp Cloud API — a faithful port of gowa (Go) / pywa (Python)",
   "type": "module",
