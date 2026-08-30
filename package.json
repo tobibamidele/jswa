@@ -1,0 +1,104 @@
+{
+  "name": "jswa",
+  "version": "1.0.0",
+  "description": "TypeScript client for the WhatsApp Cloud API — a faithful port of gowa (Go) / pywa (Python)",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./adapters/node": {
+      "types": "./dist/adapters/node.d.ts",
+      "import": "./dist/adapters/node.js",
+      "require": "./dist/adapters/node.cjs"
+    },
+    "./adapters/express": {
+      "types": "./dist/adapters/express.d.ts",
+      "import": "./dist/adapters/express.js",
+      "require": "./dist/adapters/express.cjs"
+    },
+    "./adapters/fastify": {
+      "types": "./dist/adapters/fastify.d.ts",
+      "import": "./dist/adapters/fastify.js",
+      "require": "./dist/adapters/fastify.cjs"
+    },
+    "./adapters/hono": {
+      "types": "./dist/adapters/hono.d.ts",
+      "import": "./dist/adapters/hono.js",
+      "require": "./dist/adapters/hono.cjs"
+    },
+    "./adapters/nextjs": {
+      "types": "./dist/adapters/nextjs.d.ts",
+      "import": "./dist/adapters/nextjs.js",
+      "require": "./dist/adapters/nextjs.cjs"
+    },
+    "./adapters/tanstack": {
+      "types": "./dist/adapters/tanstack.d.ts",
+      "import": "./dist/adapters/tanstack.js",
+      "require": "./dist/adapters/tanstack.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "keywords": [
+    "whatsapp",
+    "whatsapp-cloud-api",
+    "meta",
+    "chatbot",
+    "sdk"
+  ],
+  "author": "tobibamidele",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobibamidele/jswa.git"
+  },
+  "peerDependencies": {
+    "@tanstack/start": ">=1.0.0",
+    "express": ">=4.0.0",
+    "fastify": ">=4.0.0",
+    "hono": ">=4.0.0",
+    "next": ">=14.0.0"
+  },
+  "peerDependenciesMeta": {
+    "express": {
+      "optional": true
+    },
+    "fastify": {
+      "optional": true
+    },
+    "hono": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    },
+    "@tanstack/start": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.57.0",
+    "fastify": "^5.12.1",
+    "hono": "^4.4.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
